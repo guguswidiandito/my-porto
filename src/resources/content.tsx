@@ -2,18 +2,18 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
-  avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
+  firstName: "Gugus",
+  lastName: "Widiandito",
+  name: `Gugus Widiandito`,
+  role: "Web Developer",
+  avatar: "/images/avatars.jpg",
+  email: "guguswidiandito@gmail.com",
   location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
 
 const newsletter: Newsletter = {
-  display: true,
+  display: false,
   title: <>Subscribe to {person.firstName}'s Newsletter</>,
   description: <>My weekly newsletter about creativity and engineering</>,
 };
@@ -25,25 +25,25 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/guguswidiandito",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/guguswidiandito",
     essential: true,
   },
   {
     name: "Instagram",
     icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
+    link: "https://www.instagram.com/guguswidiandito/",
     essential: false,
   },
   {
     name: "Threads",
     icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.threads.com/@guguswidiandito",
     essential: true,
   },
   {
@@ -60,26 +60,34 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Building reliable systems for risk and audit</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Enterprise Systems</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/enterprise-risk-and-audit-management-system",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm {person.name}, a web developer specializing in{" "}
+      <Text as="span" size="xl" weight="strong">
+        ERM & Audit Management Systems
+      </Text>
+      .<br />
+      I build scalable enterprise applications using Laravel and modern
+      JavaScript frameworks, turning complex governance workflows into
+      efficient digital solutions.
+    </>
   ),
 };
+
 
 const about: About = {
   path: "/about",
@@ -94,7 +102,7 @@ const about: About = {
     display: true,
   },
   calendar: {
-    display: true,
+    display: false,
     link: "https://cal.com",
   },
   intro: {
@@ -102,9 +110,7 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Gugus is a Jakarta-based web developer specializing in Enterprise Risk Management (ERM) and Audit Management Systems. He focuses on building scalable, secure, and maintainable web applications using Laravel and React, translating complex governance, risk, and compliance workflows into efficient, user-friendly digital solutions.
       </>
     ),
   },
@@ -113,44 +119,29 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "PT Tri Nindya Utama",
+        timeframe: "2018 - Present",
+        role: "Senior Web Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Led the development and modernization of ERM and Audit Management System interfaces,
+            improving usability and reducing user processing time by over 25%.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Optimized backend and frontend performance using Laravel and React,
+            resulting in faster page load times and more reliable large-scale enterprise workflows.
           </>,
         ],
+
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
-      },
-      {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
-          </>,
-        ],
-        images: [],
       },
     ],
   },
@@ -159,7 +150,7 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
+        name: "STMIK YMI Tegal",
         description: <>Studied software engineering.</>,
       },
       {
@@ -173,62 +164,70 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Laravel",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>Building robust backend systems for ERM and Audit Management applications with clean architecture and secure data handling.</>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "PHP", icon: "php" },
+          { name: "Laravel", icon: "laravel" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "React",
+        description: (
+          <>Developing scalable and maintainable frontend applications with complex business workflows and dynamic user interfaces.</>
+        ),
+        tags: [
+          { name: "JavaScript", icon: "javascript" },
+          { name: "React", icon: "react" },
         ],
+        images: [],
+      },
+      {
+        title: "TypeScript",
+        description: (
+          <>Writing type-safe, predictable code to improve maintainability and reduce runtime errors in large-scale applications.</>
+        ),
+        tags: [
+          { name: "TypeScript", icon: "typescript" },
+        ],
+        images: [],
       },
       {
         title: "Next.js",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>Building modern web applications with server-side rendering, optimized performance, and clean routing architecture.</>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "Next.js", icon: "nextjs" },
+          { name: "React", icon: "react" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Node.js",
+        description: (
+          <>Creating APIs and background services to support frontend applications and system integrations.</>
+        ),
+        tags: [
+          { name: "Node.js", icon: "nodejs" },
         ],
+        images: [],
+      },
+      {
+        title: "Vue.js",
+        description: (
+          <>Developing lightweight and reactive user interfaces for internal tools and enterprise dashboards.</>
+        ),
+        tags: [
+          { name: "Vue.js", icon: "vue" },
+        ],
+        images: [],
       },
     ],
+
   },
 };
 
