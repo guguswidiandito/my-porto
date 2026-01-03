@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  portfolio:
+    container_name: next-portfolio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1805:1805"
+    environment:
+      NODE_ENV: production
+      PORT: 1805
+    restart: unless-stopped

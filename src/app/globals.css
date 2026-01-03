@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --background: 250 250 250;
+    --foreground: 15 23 42;
+    --card: 255 255 255;
+    --card-foreground: 15 23 42;
+    --primary: 99 102 241;
+    --primary-foreground: 255 255 255;
+    --secondary: 241 245 249;
+    --secondary-foreground: 51 65 85;
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139;
+    --accent: 241 245 249;
+    --accent-foreground: 51 65 85;
+    --border: 226 232 240;
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --primary: 129 140 248;
+    --primary-foreground: 15 23 42;
+    --secondary: 51 65 85;
+    --secondary-foreground: 248 250 252;
+    --muted: 51 65 85;
+    --muted-foreground: 148 163 184;
+    --accent: 51 65 85;
+    --accent-foreground: 248 250 252;
+    --border: 51 65 85;
+  }
+
+  * {
+    @apply border-slate-200 dark:border-slate-700;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-900 dark:text-slate-50;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors duration-200 dark:text-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700;
+  }
+
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-lg hover:border-primary-300 dark:hover:border-primary-600;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-slate-600 dark:text-slate-400 mb-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-purple-600 dark:from-primary-400 dark:to-purple-400 bg-clip-text text-transparent;
+  }
+
+  .skill-badge {
+    @apply inline-flex items-center px-3 py-1.5 text-sm font-medium rounded-full bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300;
+  }
+
+  .nav-link {
+    @apply text-slate-600 hover:text-primary-600 dark:text-slate-300 dark:hover:text-primary-400 font-medium transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-primary-600 dark:text-primary-400;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-slate-400 dark:bg-slate-500;
+}
+
+/* Selection color */
+::selection {
+  @apply bg-primary-200 dark:bg-primary-800 text-slate-900 dark:text-white;
+}
